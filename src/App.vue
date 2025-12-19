@@ -1,10 +1,11 @@
 <template>
   <div>
-    <router-view /> 
+    <!-- <router-view /> 
     <div>{{count}}</div>
     <div>{{myOwnName}}</div>
-    <div>{{double}}</div>
-    <el-button @click="()=>sStore.count++">点击我</el-button>
+    <div>{{double}}</div> -->
+    <VxeGridTable/>
+    <!-- <el-button @click="()=>sStore.count++">点击我</el-button> -->
     <!-- <AdvancedMiniTable
       :data="tableData"
       :columns="columns"
@@ -17,8 +18,10 @@
 import { defineProps,computed } from "vue";
 import { useWorker } from "@/extra/useWork.js";
 import AdvancedMiniTable from "./components/MIniTable.vue";
+import VxeGridTable from "./components/VxeGridTable.vue";
 import {useSystemStore} from '@/store/index.js'
 import{ storeToRefs } from 'pinia'
+// import { VxeGrid } from "vxe-table";
 const { post, result } = useWorker(
   new URL("@/extra/work.js", import.meta.url),
   { type: "module" }
